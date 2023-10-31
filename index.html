@@ -44,14 +44,14 @@
           <li><a class="active" href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
-          <li><a href="services.html">Services</a></li>
+          <!-- <li><a href="services.html">Services</a></li> -->
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-       <div class="header-social-links">
+      <div class="header-social-links">
         <a href="https://discord.gg/e8s8Vagy2" class="discord"><i class="bi bi-discord"></i></a>
         <a href="https://www.facebook.com/muhammadilyas.waynescott/" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="https://www.instagram.com/ilyasmrn_/" class="instagram"><i class="bi bi-instagram"></i></a>
@@ -67,7 +67,9 @@
     <div class="container d-flex flex-column align-items-center" data-aos="zoom-in" data-aos-delay="100">
       <h1>Hi I'm <br><span style="color:#f7b86b;font-size: larger;">Ilyas Amran</span></h1>
       <h2>Software Developer & Graphic Designer</h2>
-      <a href="about.html" class="btn-about">About Me</a>
+      <div> <a href="about.html" class="btn-about" style="margin-right: 10px;">About Me</a>
+        <a href="#"onclick="downloadPDF()" class="btn-about">My Resume</a> </div>
+     
     </div>
     
 
@@ -100,6 +102,27 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    function downloadPDF() {
+      // Get the PDF file path
+      const pdfFilePath = 'assets/resumeilyas.pdf';
+    
+      // Create a temporary link element
+      const link = document.createElement('a');
+      link.href = pdfFilePath;
+      link.target = '_blank';
+      link.download = 'resumeilyas.pdf';
+    
+      // Append the link to the document body
+      document.body.appendChild(link);
+    
+      // Programmatically trigger the click event on the link
+      link.click();
+    
+      // Remove the link from the document body
+      document.body.removeChild(link);
+    }
+    </script>
 </body>
 
 </html>
